@@ -1,0 +1,12 @@
+<h2>Calcular Matrícula</h2>
+<form (ngSubmit)="calcularMatricula()">
+  <mat-form-field appearance="fill">
+    <mat-label>Número de Materias</mat-label>
+    <input matInput type="number" [(ngModel)]="numMaterias" name="numMaterias" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Calcular</button>
+</form>
+
+<div *ngIf="costoTotal !== null">
+  <h3>Costo Total de la Matrícula: {{ costoTotal | currency:'PEN' }}</h3>
+</div>
