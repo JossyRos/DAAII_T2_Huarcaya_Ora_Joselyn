@@ -1,0 +1,20 @@
+<h2>Control de Alcoholemia</h2>
+<form (ngSubmit)="calcularResultado()">
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo de Vehículo</mat-label>
+    <mat-select [(ngModel)]="tipoVehiculo" name="tipoVehiculo" required>
+      <mat-option *ngFor="let vehiculo of tiposVehiculos" [value]="vehiculo.indicador">
+        {{ vehiculo.tipo }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tasa de Alcohol en Sangre</mat-label>
+    <input matInput type="number" [(ngModel)]="tasaAlcohol" name="tasaAlcohol" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Calcular</button>
+</form>
+
+<div *ngIf="resultado">
+  <h3>{{ resultado }}</h3>
+</div>
