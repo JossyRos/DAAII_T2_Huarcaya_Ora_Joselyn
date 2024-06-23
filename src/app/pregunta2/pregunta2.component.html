@@ -1,0 +1,16 @@
+<h2>Calcular Utilidades</h2>
+<form (ngSubmit)="calcularUtilidad()">
+  <mat-form-field appearance="fill">
+    <mat-label>Salario Mensual</mat-label>
+    <input matInput type="number" [(ngModel)]="salario" name="salario" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Años Trabajados</mat-label>
+    <input matInput type="number" [(ngModel)]="anios" name="anios" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Calcular</button>
+</form>
+
+<div *ngIf="utilidad !== null">
+  <h3>Utilidad: {{ utilidad | currency }}</h3>
+</div>
